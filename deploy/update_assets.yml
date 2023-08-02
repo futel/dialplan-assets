@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  tasks:
+  - name: load conf
+    include_vars: "conf.yml"
+  - name: clean sounds directories
+    file:
+      path: "{{ asset_dest_directory }}"
+      state: absent
+  - name: clean sounds directories
+    file:
+      path: "{{ asset_dest_directory }}"
+      state: directory
+  - name: clean sounds directories
+    file:
+      path: "{{ asset_dest_directory }}/{{ item }}"
+      state: directory
+    with_items:
+      - en
+  - name: update and copy sounds
+    command: ruby scripts/update_audio_assets.rb {{ asset_src_directory }}/{{ item }} {{ asset_dest_directory }}/{{ item }}
+    with_items:
+      - en

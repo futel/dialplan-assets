@@ -28,7 +28,11 @@ In src:
 
 Copy assets directory tree into asset_src.
 
-XXX Provision/transform assets.
+## Provision/transform assets
+
+    ansible-playbook deploy/update_assets.yml
+
+## Copy assets to S3
 
 In src:
 
