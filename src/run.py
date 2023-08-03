@@ -16,7 +16,7 @@ s3 = boto3.resource('s3')
 def files_keys():
     """Yield (path, key) tuples for all files in root_path."""
     # Root has two levels of subdirectories, root/lang/directory/file.
-    # Keys are lang:directory:file.
+    # Keys are lang/directory/file.
     for lang_dir_name in lang_dir_names:
         lang_dir_path = '/'.join((root_path, lang_dir_name))
         statement_dir_names = os.listdir(lang_dir_path)
@@ -25,16 +25,13 @@ def files_keys():
                 (lang_dir_path, statement_dir_name))
             file_names = os.listdir(statement_dir_path)
             for file_name in file_names:
-                file_path = (
-                    root_path + '/' +
-                    lang_dir_name + '/' +
+                partial_path = (
+                    lang_dir_name + "/" +
                     statement_dir_name + '/' +
                     file_name)
-                key = (
-                    lang_dir_name + ":" +
-                    statement_dir_name + ':' +
-                    file_name)
-                yield (file_path, key)
+                full_path = (
+                    root_path + '/' + partial_path)
+                yield (full_path, partial_path)
 
 def obsolete_keys():
     local_keys = list(key for (_file_path, key) in files_keys())
