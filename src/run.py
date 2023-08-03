@@ -11,7 +11,6 @@ root_path = '../assets'
 lang_dir_names = ('en', 'es')
 BUCKET = 'dialplan-assets'
 
-#s3_client = boto3.client('s3')
 s3 = boto3.resource('s3')
 
 def files_keys():
@@ -44,7 +43,8 @@ def obsolete_keys():
 
 def upload_files():
     for (file_path, key) in files_keys():
-        s3.Bucket(BUCKET).upload_file(file_path, key)
+        s3.Bucket(BUCKET).upload_file(
+            file_path, key, ExtraArgs={'ContentType': "audio/ulaw"})
         print("uploaded", file_path, key)
 
 def delete_obsolete_files():

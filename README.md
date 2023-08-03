@@ -38,4 +38,4 @@ In src:
 
     source env/bin/activate
     
-    python src/run.sh
+    python run.py
