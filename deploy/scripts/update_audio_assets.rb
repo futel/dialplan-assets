@@ -4,7 +4,9 @@
 # usage: update_audio_assets <dest_dir> <src_dir>
 
 
-#https://wiki.asterisk.org/wiki/display/AST/Asterisk+10+Codecs+and+Audio+Formats
+# https://wiki.asterisk.org/wiki/display/AST/Asterisk+10+Codecs+and+Audio+Formats
+# https://support.twilio.com/hc/en-us/articles/223180588-Best-Practices-for-Audio-Recordings
+# The telephony standard is 8-bit PCM mono uLaw with a sampling rate of 8Khz. Since this telephony format is fixed, any audio file uploaded to Twilio will be transcoded to that telephony standard. That standard is bandwidth-limited to the 300Hz - 8Khz audio range and is designed for voice and provides acceptable voice-quality results. This standard isn't suitable for quality music reproduction but will provide minimally acceptable results.
 
 require 'find'
 require 'fileutils'
@@ -22,15 +24,14 @@ script_mtime = File.mtime(__FILE__)
 
 Find.find(SRC_DIR).each do |f|
   is_raw = true
-  out_ext = 'sln'
+  out_ext = 'ulaw'
 
   cleanup = []
   next if File.directory?(f)
 
   src = f
-  src_ext = File.extname(src)
 
-  #create the destination
+  #create the destination path
   f = f.split("/").last
   dst = File.join(DEST_DIR, f)
   base = File.join(File.dirname(dst), File.basename(dst, ".*"))
@@ -39,6 +40,7 @@ Find.find(SRC_DIR).each do |f|
   FileUtils.mkdir_p(File.dirname(dst))
 
   #convert mp3 to wav and use the info for the destination
+  src_ext = File.extname(src)
   if src_ext == ".mp3"
     if OUTPUT_MP3
       out_ext = 'mp3'
@@ -47,11 +49,6 @@ Find.find(SRC_DIR).each do |f|
   end
 
   dst = base + "." + out_ext
-  #ditch if the file exists and the dest is newer
-  next if File.exist?(dst) and File.mtime(dst) > File.mtime(src) and File.mtime(dst) > script_mtime
-
-
-  #report
   puts "#{src} -> #{dst}"
 
   # Combined signal chain (order is important):
@@ -68,7 +65,7 @@ Find.find(SRC_DIR).each do |f|
   #remove header if it is raw
   if is_raw
     raw = base + "-tmp.raw"
-    raise "cannot create raw encoding" unless system("sndfile-convert", "-pcm16", src, raw)
+    raise "cannot create raw encoding" unless system("sndfile-convert", "-ulaw", src, raw)
     cleanup << raw
     src = raw
   elsif out_ext == ".mp3" and OUTPUT_MP3 #convert back to mp3
