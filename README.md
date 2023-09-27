@@ -48,7 +48,7 @@ In src:
 
 The asset host is dialplan-assets.s3.us-west-2.amazonaws.com.
 
-If the bucket is new, update the Digital ocean .env file to point to the asset host as described in do-functions README-deploy.
+The current process will not result in a new bucket. If the bucket is new, update the Digital ocean .env file to point to the asset host as described in do-functions README-deploy.
 
 # Notes
 
