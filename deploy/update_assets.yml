@@ -22,4 +22,5 @@
     command: ruby scripts/update_audio_assets.rb {{ asset_src_directory }}/{{ item }} {{ asset_dest_directory }}/{{ item }}
     with_items:
       - en/outgoing
+      - en/utilities
       - es/outgoing
