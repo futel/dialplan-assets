@@ -53,3 +53,10 @@ The current process will not result in a new bucket. If the bucket is new, updat
 # Notes
 
 The asset host is built from the bucket name and AWS region. The bucket name is hardcoded in the deployment config and/or source, and the region is set by AWS configuration. We don't intend to change the bucket name, instead, all assets needed by all installations must be in the bucket. If we need to change the bucket name, we will need to deploy a second bucket, and then deploy dialplan-functions with the new asset host.
+
+# Content credits
+
+en/outgoing Rose Howell 2023
+en/utilities Tishbite
+es/outgoing Sofia
+es/utilities Sofia
