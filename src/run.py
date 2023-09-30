@@ -41,7 +41,11 @@ def obsolete_keys():
 def upload_files():
     for (file_path, key) in files_keys():
         s3.Bucket(BUCKET).upload_file(
-            file_path, key, ExtraArgs={'ContentType': "audio/ulaw"})
+            file_path,
+            key,
+            ExtraArgs={
+                'ContentType': "audio/ulaw",
+                'Metadata': {'cache-control':"max-age=28800"}})
         print("uploaded", file_path, key)
 
 def delete_obsolete_files():
