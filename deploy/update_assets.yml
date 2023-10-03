@@ -11,17 +11,16 @@
     file:
       path: "{{ asset_dest_directory }}"
       state: directory
-  - name: clean assets directories
+  - name: clean temp directory
     file:
-      path: "{{ asset_dest_directory }}/{{ item }}"
+      path: tmp
+      state: absent
+  - name: clean temp directory
+    file:
+      path: tmp
       state: directory
-    with_items:
-      - en
-      - es      
+  - name: flatten directory tree
+    command: python3 scripts/copy_assets.py {{ asset_src_directory }} tmp
   - name: update and copy sounds
-    command: ruby scripts/update_audio_assets.rb {{ asset_src_directory }}/{{ item }} {{ asset_dest_directory }}/{{ item }}
-    with_items:
-      - en/outgoing
-      - en/utilities
-      - es/outgoing
-      - es/utilities
+    command: ruby scripts/update_audio_assets.rb tmp {{ asset_dest_directory }}
+# XXX should remove assets not in assets_src
