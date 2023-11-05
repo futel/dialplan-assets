@@ -29,6 +29,8 @@ Have packages (on an Ubuntu system):
 Have ruby gem:
 - sndfile
 
+Have asset directory tree in asset_src.
+
 # Setup
 
 To be done once.
@@ -45,15 +47,11 @@ Fill src/.env to match src/.env.sample as described in README-aws.
 
 In src:
 
-    virtualenv env
+    python3 -m venv venv
     
-    source env/bin/activate
+    source venv/bin/activate
 
     pip install -r requirements.txt
-
-## Set up assets
-
-Copy content directory tree into asset_src.
 
 # Deploy
 
@@ -65,7 +63,7 @@ Copy content directory tree into asset_src.
 
 In src:
 
-    source env/bin/activate
+    source venv/bin/activate
     
     python run.py
 
