@@ -4,6 +4,31 @@ We store assets in S3. We don't version the assets, we only have one collection 
 
 Dialplan functions should be set up (after this component) as described in dialplan-functions README-deploy.
 
+# Requirements
+
+Have packages (on an Ubuntu system):
+
+- ansible-core
+- gcc
+- g++
+- lame
+- libffi-dev
+- libgsl-dev
+- libsndfile-dev
+- libsox-fmt-mp3
+- make
+- nodejs
+- npm
+- pkg-config
+- ruby-dev
+- normalize-audio
+- sndfile-programs
+- sox
+- Twilio CLI 5.16 or equivalent eg local/twilio-5.16.0-amd64.deb
+
+Have ruby gem:
+- sndfile
+
 # Setup
 
 To be done once.
