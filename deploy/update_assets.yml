@@ -3,15 +3,15 @@
   tasks:
   - name: load conf
     include_vars: "conf.yml"
-  - name: clean sounds directories
+  - name: clean assets directory
     file:
       path: "{{ asset_dest_directory }}"
       state: absent
-  - name: clean sounds directories
+  - name: clean assets directory
     file:
       path: "{{ asset_dest_directory }}"
       state: directory
-  - name: clean sounds directories
+  - name: clean assets directories
     file:
       path: "{{ asset_dest_directory }}/{{ item }}"
       state: directory
