@@ -21,7 +21,9 @@
   - name: update and copy sounds
     command: ruby scripts/update_audio_assets.rb {{ asset_src_directory }}/{{ item }} {{ asset_dest_directory }}/{{ item }}
     with_items:
+      - en/community
       - en/outgoing
       - en/utilities
+      - es/community      
       - es/outgoing
       - es/utilities
