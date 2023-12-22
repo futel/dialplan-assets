@@ -45,7 +45,7 @@ def upload_files():
             key,
             ExtraArgs={
                 'ContentType': "audio/ulaw",
-                'Metadata': {'cache-control':"max-age=28800"}})
+                'CacheControl': "max-age=28800"})
         print("uploaded", file_path, key)
 
 def delete_obsolete_files():
