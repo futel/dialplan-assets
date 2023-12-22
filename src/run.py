@@ -8,7 +8,7 @@ import os
 load_dotenv()
 
 root_path = '../assets'
-lang_dir_names = ('en', 'es')
+lang_dir_names = ('en', 'es', 'sound')
 BUCKET = 'dialplan-assets'
 
 s3 = boto3.resource('s3')

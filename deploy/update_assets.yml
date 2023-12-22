@@ -17,13 +17,17 @@
       state: directory
     with_items:
       - en
-      - es      
+      - es
+      - sound
   - name: update and copy sounds
     command: ruby scripts/update_audio_assets.rb {{ asset_src_directory }}/{{ item }} {{ asset_dest_directory }}/{{ item }}
     with_items:
       - en/community
+      - en/operator
       - en/outgoing
       - en/utilities
-      - es/community      
+      - es/community
+      - es/operator      
       - es/outgoing
       - es/utilities
+      - sound/ops
