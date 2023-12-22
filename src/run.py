@@ -45,7 +45,7 @@ def upload_files():
             key,
             ExtraArgs={
                 'ContentType': "audio/ulaw",
-                'CacheControl': "max-age=28800"})
+                'CacheControl': "max-age=28800"}) # 8 hours.
         print("uploaded", file_path, key)
 
 def delete_obsolete_files():
