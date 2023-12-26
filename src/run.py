@@ -10,7 +10,7 @@ load_dotenv()
 root_path = '../assets'
 lang_dir_names = ('en', 'es', 'sound')
 BUCKET = 'dialplan-assets'
-
+MAX_AGE = 86400                 # 24 hours.
 s3 = boto3.resource('s3')
 
 def files_keys():
@@ -45,7 +45,7 @@ def upload_files():
             key,
             ExtraArgs={
                 'ContentType': "audio/ulaw",
-                'CacheControl': "max-age=28800"}) # 8 hours.
+                'CacheControl': "max-age={}".format(MAX_AGE)})
         print("uploaded", file_path, key)
 
 def delete_obsolete_files():
