@@ -1,10 +1,6 @@
-# Content credits
+# dialplan-assets
 
-en/community XXX
-en/operator XXX
-en/outgoing Rose Howell 2023
-en/utilities Tishbite
-es/community XXX
-es/operator XXX
-es/outgoing Sofia
-es/utilities Sofia
+Asset server for Futel deployments, implemented with AWS S3.
+
+- HTTP server for Twilio Programmable Voice assets
+
