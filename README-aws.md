@@ -1,6 +1,7 @@
 # AWS requirements
 
-Create AWS user dialplan-assets
+## Create dialplan-assets AWS user
+
 (the permissions and groups are probably not needed?)
 description: asset deployment
 permissions policies:
@@ -9,7 +10,8 @@ permissions policies:
 groups:
 - s3-writers
 
-Create S3 bucket
+## Create dialplan-assets S3 bucket
+
 name: dialplan-assets
 aws region: us-west-2
 object ownership: acls disabled
@@ -42,4 +44,17 @@ bucket policy:
 	]
 }
 
-etc etc
+## Create dialplan-assets-logs S3 bucket
+
+name: dialplan-assets-logs
+copy settings from existing bucket: dialplan-assets
+aws region: us-west-2
+object ownership: acls disabled
+block public access settings: block all
+
+## Set up server access logging for dialplan-assets S3 bucket
+
+In the web console:
+- properties:server access logging:edit
+- destination s3://dialplan-assets-logs
+- XXX how do we need to maintain these? Delete old logs?
