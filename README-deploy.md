@@ -6,28 +6,28 @@ Dialplan functions should be set up (after this component) as described in dialp
 
 # Requirements
 
-Have packages (on an Ubuntu system):
-
-- ansible-core
-- gcc
-- g++
-- lame
-- libffi-dev
-- libgsl-dev
-- libsndfile-dev
-- libsox-fmt-mp3
-- make
-- nodejs
-- npm
-- pkg-config
-- ruby-dev
-- normalize-audio
-- sndfile-programs
-- sox
-- Twilio CLI 5.16 or equivalent eg local/twilio-5.16.0-amd64.deb
-
-Have ruby gem:
-- sndfile
+- debian box (trixie, ubuntu 23)
+- apt packages
+  - ansible-core
+  - gcc
+  - g++
+  - lame
+  - libffi-dev
+  - libgsl-dev
+  - libsndfile-dev
+  - libsox-fmt-mp3
+  - make
+  - nodejs
+  - npm
+  - pkg-config
+  - ruby-dev
+  - normalize-audio
+  - sndfile-programs
+  - sox
+  - Twilio CLI 5.16 or equivalent eg local/twilio-5.16.0-amd64.deb
+- ruby gems    
+  - sndfile
+  - yard
 
 Have asset directory tree in asset_src.
 
