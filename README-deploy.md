@@ -47,25 +47,22 @@ Fill src/.env to match src/.env.sample as described in README-aws.
 
 In src:
 
-    python3 -m venv venv
-    
-    source venv/bin/activate
-
-    pip install -r requirements.txt
+- python3 -m venv venv
+- source venv/bin/activate
+- pip install -r requirements.txt
 
 # Deploy
 
 ## Provision/transform assets
 
-    ansible-playbook deploy/update_assets.yml
+- ansible-playbook deploy/update_assets.yml
 
 ## Copy assets to S3
 
 In src:
 
-    source venv/bin/activate
-    
-    python run.py
+- source venv/bin/activate
+- python3 run.py
 
 ## Update Digital Ocean Function components to point to URLs
 
