@@ -41,7 +41,7 @@ To be done once.
 
 ## Set up environment secrets
 
-Fill src/.env to match src/.env.sample as described in aws.md.x
+Fill src/.env to match src/.env.sample as described in aws.md.
 
 ## Set up virtualenv
 
@@ -64,11 +64,11 @@ In src:
 - source venv/bin/activate
 - python3 run.py
 
-## Update Digital Ocean Function components to point to URLs
+## Update DigitalOcean Function components to point to URLs
 
 The asset host is dialplan-assets.s3.us-west-2.amazonaws.com.
 
-The current process will not result in a new bucket. If the bucket is new, update the Digital ocean .env file to point to the asset host as described in dialplan-functions DEPLOY.md
+The current process will not result in a new bucket. If the bucket is new, update the DigitalOcean .env file to point to the asset host as described in dialplan-functions DEPLOY.md
 
 # Notes
 
