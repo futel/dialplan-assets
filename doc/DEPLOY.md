@@ -2,11 +2,11 @@
 
 We store assets in S3. We don't version the assets, we only have one collection which all dialplan installations access.
 
-Dialplan functions should be set up (after this component) as described in dialplan-functions README-deploy.
+Dialplan functions should be set up (after this component) as described in dialplan-functions DEPLOY.md.
 
 # Meta-requirements
 
-Set up S3 as in README-aws.
+Set up S3 as in aws.md.
 
 Have asset directory tree in assets_src.
 
@@ -41,7 +41,7 @@ To be done once.
 
 ## Set up environment secrets
 
-Fill src/.env to match src/.env.sample as described in README-aws.
+Fill src/.env to match src/.env.sample as described in aws.md.x
 
 ## Set up virtualenv
 
@@ -68,7 +68,7 @@ In src:
 
 The asset host is dialplan-assets.s3.us-west-2.amazonaws.com.
 
-The current process will not result in a new bucket. If the bucket is new, update the Digital ocean .env file to point to the asset host as described in do-functions README-deploy.
+The current process will not result in a new bucket. If the bucket is new, update the Digital ocean .env file to point to the asset host as described in dialplan-functions DEPLOY.md
 
 # Notes
 
