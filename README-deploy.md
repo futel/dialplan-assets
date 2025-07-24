@@ -4,6 +4,12 @@ We store assets in S3. We don't version the assets, we only have one collection 
 
 Dialplan functions should be set up (after this component) as described in dialplan-functions README-deploy.
 
+# Meta-requirements
+
+Set up S3 as in README-aws.
+
+Have asset directory tree in assets_src.
+
 # Requirements
 
 - debian box (trixie, ubuntu 23)
@@ -29,15 +35,9 @@ Dialplan functions should be set up (after this component) as described in dialp
   - sndfile
   - yard
 
-Have asset directory tree in asset_src.
-
 # Setup
 
 To be done once.
-
-## Set up S3
-
-Set up S3 as in README-aws.
 
 ## Set up environment secrets
 
