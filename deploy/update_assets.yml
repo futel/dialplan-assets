@@ -26,11 +26,14 @@
       - en/community
       - en/operator
       - en/outgoing
+      - en/streetroots
       - en/utilities
       - es/directories
       - es/community
       - es/operator      
       - es/outgoing
+      - es/streetroots      
       - es/utilities
       - sound/ops
-      - sound/old_town_crier
+      - sound/old-town-crier
+      - sound/streetroots
