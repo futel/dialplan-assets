@@ -2,6 +2,12 @@
 
 We store assets in S3. We don't version the assets, we only have one collection which all dialplan installations access.
 
+> [!IMPORTANT]  
+> Before attempting to deploy, mess with, change, reencode, or do anything with 
+> these assets, you are expected to have a local copy of the audio assets. 
+> You can either download these from s3 or get them from an operator friend.
+> The collection of assets should be placed in `assets_src/`. 
+
 Dialplan functions should be set up (after this component) as described in dialplan-functions DEPLOY.md.
 
 # Meta-requirements
