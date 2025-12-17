@@ -4,6 +4,7 @@ import boto3
 import botocore
 from dotenv import load_dotenv
 import os
+import argparse
 
 load_dotenv()
 
@@ -55,5 +56,13 @@ def delete_obsolete_files():
         print("deleted", key)
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(allow_abbrev=False)
+    parser.add_argument('--delete-obsolete-files', 
+                        help='delete obsolete files after upload', 
+                        action='store_true')
+    args = parser.parse_args()
     upload_files()
-    delete_obsolete_files()
+    if args.delete_obsolete_files:
+        delete_obsolete_files()
+    else:
+        print('Leaving "obsolete" files untouched.')
