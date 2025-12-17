@@ -45,11 +45,10 @@ Fill src/.env to match src/.env.sample as described in aws.md.
 
 ## Set up virtualenv
 
-In src:
-
+- cd src
 - python3 -m venv venv
 - source venv/bin/activate
-- pip install -r src/requirements.txt
+- pip install -r requirements.txt
 
 # Deploy
 
