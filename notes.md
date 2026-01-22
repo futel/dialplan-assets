@@ -3,7 +3,7 @@
 - en/community XXX
 - en/directories XXX
 - en/operator XXX
-- en/outgoing Rose Howell 2023
+- en/outgoing Rose Howell 2023, Sofia spanish
 - en/streetroots Street Roots writing program 2025
 - en/utilities Tishbite
 - es/community XXX
