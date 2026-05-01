@@ -26,6 +26,7 @@
       - en/community-services
       - en/directories
       - en/incoming
+      - en/motherfoucaults
       - en/operator
       - en/outgoing
       - en/streetroots
@@ -33,10 +34,12 @@
       - es/community
       - en/community-services      
       - es/directories
+      - es/motherfoucaults      
       - es/operator      
       - es/outgoing
       - es/streetroots      
       - es/utilities
       - sound/community
+      - sound/motherfoucaults
       - sound/ops
       - sound/streetroots
