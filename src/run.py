@@ -8,7 +8,9 @@ import argparse
 
 load_dotenv()
 
+# Root directory for all assets.
 root_path = '../assets'
+# Subdirectories of root directory which assets may be in.
 lang_dir_names = ('en', 'es', 'sound')
 BUCKET = 'dialplan-assets'
 MAX_AGE = 86400                 # 24 hours.
@@ -40,6 +42,7 @@ def obsolete_keys():
     return (key for key in remote_keys if key not in local_keys)
 
 def upload_files():
+    """Upload all files to S3 bucket."""
     for (file_path, key) in files_keys():
         s3.Bucket(BUCKET).upload_file(
             file_path,
